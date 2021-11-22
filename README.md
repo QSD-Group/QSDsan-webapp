@@ -4,10 +4,10 @@
 
 ## Installation
 
-First, install all required packages.
+First, install all required packages. (`--force` flag to override `lottie` and use React 17)
 
 ```bash
-npm install
+npm install --force
 ```
 
 Then, start the website
