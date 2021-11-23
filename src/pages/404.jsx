@@ -1,5 +1,5 @@
 import React from 'react'
-import Lottie from 'lottie-react'
+// import Lottie from 'lottie-react'
 
 import Header from '../layouts/Header'
 import HeaderNav from '../layouts/HeaderNav'
@@ -13,7 +13,9 @@ export default function PageNotFound() {
 
       <section className="max-w-7xl m-auto p-4 text-center">
         <div className="inline-block p-10 border border-indigo-500 border-opacity-25 rounded-lg">
-          <Lottie className="h-60" animationData={lottieSearchNotFound} />
+          {
+            // <Lottie className="h-60" animationData={lottieSearchNotFound} />
+          }
           <div className="text-xl">Page Not Found!</div>
         </div>
       </section>
