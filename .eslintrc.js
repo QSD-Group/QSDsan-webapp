@@ -26,6 +26,7 @@ module.exports = {
     }],
     'no-unused-vars': 'warn',
     'no-plusplus': ['off'],
+    'no-underscore-dangle': ['off'],
     'max-len': [1, { code: 200 }],
     'react/jsx-props-no-spreading': ['off'],
     'jsx-a11y/anchor-is-valid': ['off'],
