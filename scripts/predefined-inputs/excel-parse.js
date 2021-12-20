@@ -1,3 +1,4 @@
+const BigNumber = require('bignumber.js')
 const ExcelParse = require('exceljs')
 const fs = require('fs')
 const path = require('path')
@@ -16,6 +17,7 @@ const FILE_NAMES = [ // without extension
   'Bwaise_sanitation_inputs_uncertaintyB',
   'Bwaise_sanitation_inputs_uncertaintyC',
 ]
+const SIG_DIGITS = 3
 
 function parseExcelSheets(_workbook) {
   const initialInputsSpec = new ExcelSpecs('initial_inputs')
@@ -49,6 +51,9 @@ function parseExcelSheets(_workbook) {
 
         // `-` means no unit
         if (pCellVal === undefined || pCellVal === '-') pCellVal = null
+
+        // rid of floating precision overflow
+        if (typeof pCellVal === 'number') pCellVal = Number((new BigNumber(pCellVal)).toPrecision(SIG_DIGITS))
 
         sheets[topic][pName][pCellName] = { pos: pCellPos, value: pCellVal }
       }
