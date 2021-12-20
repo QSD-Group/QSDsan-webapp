@@ -6,11 +6,16 @@ const treatment = require('./treatment')
 const reuseDisposal = require('./reuse-disposable')
 
 const allSpecs = {
-  initialInputs, userInterface, decentralizedStorage, conveyance, treatment, reuseDisposal,
+  initial_inputs: initialInputs,
+  user_interface: userInterface,
+  decentralized_storage: decentralizedStorage,
+  conveyance,
+  treatment,
+  reuse_disposal: reuseDisposal,
 }
 
 class ExcelSpecs {
-  constructor(spec = 'initialInputs') {
+  constructor(spec = 'initial_inputs') {
     if (!Object.keys(allSpecs).includes(spec)) throw new Error('Given spec is not allowed')
     this.spec = allSpecs[spec]
     this._cells = {}
