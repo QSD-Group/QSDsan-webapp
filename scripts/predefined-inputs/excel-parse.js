@@ -1,12 +1,13 @@
 const ExcelParse = require('exceljs')
 const fs = require('fs')
+const path = require('path')
 // const util = require('util')
 
 const ExcelSpecs = require('./excel-specs')
 
 const workbook = new ExcelParse.Workbook()
-const DATA_FOLDER = 'excel-data'
-const JSON_FOLDER = 'excel-json'
+const DATA_FOLDER = path.join(__dirname, 'excel-data')
+const JSON_FOLDER = path.join(__dirname, 'excel-json')
 const FILE_NAMES = [ // without extension
   'Bwaise_sanitation_inputs_baselineA',
   'Bwaise_sanitation_inputs_baselineB',
@@ -33,12 +34,13 @@ function parseExcelSheets(_workbook) {
     reuse_disposal: reuseDisposalSpec.cells,
   }
 
-  /* eslint-disable no-restricted-syntax */
+  /* eslint-disable no-restricted-syntax, no-continue */
   for (const [topic, parameters] of Object.entries(sheets)) {
     const topicWorksheet = _workbook.getWorksheet(topic)
     for (const [pName, pCells] of Object.entries(parameters)) {
+      if (pName === '_columns') continue
+
       for (const [pCellName, pCellPos] of Object.entries(pCells)) {
-        // eslint-disable-next-line no-continue
         if (pCellName === '_display') continue
         let pCellVal = topicWorksheet.getCell(pCellPos).value
 
@@ -52,7 +54,7 @@ function parseExcelSheets(_workbook) {
       }
     }
   }
-  /* eslint-enable no-restricted-syntax */
+  /* eslint-enable no-restricted-syntax, no-continue */
 
   // console.log(util.inspect(sheets, false, null, true))
   return sheets

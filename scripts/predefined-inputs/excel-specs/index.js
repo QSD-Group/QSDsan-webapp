@@ -42,6 +42,7 @@ class ExcelSpecs {
         this._cells[rowName][colName] = `${colPos}${rowPos}`
       }
     }
+    this._cells._columns = Object.keys(this.spec.columns)
   }
 
   allCells(cb) {

@@ -1547,7 +1547,19 @@
         "pos": "N50",
         "value": null
       }
-    }
+    },
+    "_columns": [
+      "units",
+      "expected",
+      "low",
+      "high",
+      "std",
+      "distribution",
+      "correlation",
+      "notes",
+      "distribution_alt",
+      "correlation_alt"
+    ]
   },
   "user_interface": {
     "module": {
@@ -4215,7 +4227,19 @@
         "pos": "N74",
         "value": null
       }
-    }
+    },
+    "_columns": [
+      "units",
+      "expected",
+      "low",
+      "high",
+      "std",
+      "distribution",
+      "correlation",
+      "notes",
+      "distribution_alt",
+      "correlation_alt"
+    ]
   },
   "decentralized_storage": {
     "mixed_excreta_module": {
@@ -6152,7 +6176,19 @@
         "pos": "N56",
         "value": null
       }
-    }
+    },
+    "_columns": [
+      "units",
+      "expected",
+      "low",
+      "high",
+      "std",
+      "distribution",
+      "correlation",
+      "notes",
+      "distribution_alt",
+      "correlation_alt"
+    ]
   },
   "conveyance": {
     "mixed_excreta_module": {
@@ -7530,7 +7566,19 @@
         "pos": "N38",
         "value": null
       }
-    }
+    },
+    "_columns": [
+      "units",
+      "expected",
+      "low",
+      "high",
+      "std",
+      "distribution",
+      "correlation",
+      "notes",
+      "distribution_alt",
+      "correlation_alt"
+    ]
   },
   "treatment": {
     "mixed_excreta_module_1": {
@@ -14369,7 +14417,19 @@
         "pos": "N187",
         "value": null
       }
-    }
+    },
+    "_columns": [
+      "units",
+      "expected",
+      "low",
+      "high",
+      "std",
+      "distribution",
+      "correlation",
+      "notes",
+      "distribution_alt",
+      "correlation_alt"
+    ]
   },
   "reuse_disposal": {
     "excreta_module_1": {
@@ -15747,6 +15807,18 @@
         "pos": "N40",
         "value": null
       }
-    }
+    },
+    "_columns": [
+      "units",
+      "expected",
+      "low",
+      "high",
+      "std",
+      "distribution",
+      "correlation",
+      "notes",
+      "distribution_alt",
+      "correlation_alt"
+    ]
   }
 }
