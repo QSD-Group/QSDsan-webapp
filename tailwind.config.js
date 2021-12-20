@@ -902,6 +902,8 @@ module.exports = {
       // READ: https://tailwindcss.com/docs/hover-focus-and-other-states#last-child
       // enables last-child (last:)
       borderWidth: ['last'],
+      borderColor: ['hover', 'focus'],
+      textColor: ['responsive', 'hover', 'focus', 'group-hover'],
     },
     accessibility: ['responsive', 'focus-within', 'focus'],
     alignContent: ['responsive'],

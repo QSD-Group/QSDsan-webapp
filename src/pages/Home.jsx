@@ -12,23 +12,23 @@ export default function Home() {
 
       <section className="max-w-7xl m-auto p-4">
         <div className="grid grid-cols-3 gap-4">
-          <Link to="/bwaise" className="group px-6 py-5 border border-indigo-500 border-opacity-25 cursor-pointer rounded-lg select-none overflow-hidden space-y-1 hover:bg-white hover:shadow-lg hover:border-transparent">
+          <Link to="/bwaise" className="group px-6 py-5 border border-indigo-500 border-opacity-25 cursor-pointer rounded-lg select-none overflow-hidden space-y-1 hover:shadow-lg hover:border-red">
             <p className="font-semibold text-lg text-indigo-600 group-hover:text-gray-900">Bwaise</p>
             <p className="text-indigo-500 group-hover:text-gray-500">Sanitation Alternatives in Bwaise, Uganda</p>
           </Link>
 
           <div className="group px-6 py-5 border border-indigo-500 border-opacity-25 cursor-pointer rounded-lg select-none overflow-hidden space-y-1 hover:bg-white hover:shadow-lg hover:border-transparent">
-            <p className="font-semibold text-lg text-indigo-600 group-hover:text-gray-900">Bwaise</p>
+            <p className="font-semibold text-lg text-indigo-600 group-hover:text-gray-900">Empty</p>
             <p className="text-indigo-500 group-hover:text-gray-500">Create a new project from a variety of starting templates.</p>
           </div>
 
           <div className="group px-6 py-5 border border-indigo-500 border-opacity-25 cursor-pointer rounded-lg select-none overflow-hidden space-y-1 hover:bg-white hover:shadow-lg hover:border-transparent">
-            <p className="font-semibold text-lg text-indigo-600 group-hover:text-gray-900">Bwaise</p>
+            <p className="font-semibold text-lg text-indigo-600 group-hover:text-gray-900">Empty</p>
             <p className="text-indigo-500 group-hover:text-gray-500">Create a new project from a variety of starting templates.</p>
           </div>
 
           <div className="group px-6 py-5 border border-indigo-500 border-opacity-25 cursor-pointer rounded-lg select-none overflow-hidden space-y-1 hover:bg-white hover:shadow-lg hover:border-transparent">
-            <p className="font-semibold text-lg text-indigo-600 group-hover:text-gray-900">Bwaise</p>
+            <p className="font-semibold text-lg text-indigo-600 group-hover:text-gray-900">Empty</p>
             <p className="text-indigo-500 group-hover:text-gray-500">Create a new project from a variety of starting templates.</p>
           </div>
         </div>
