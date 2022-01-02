@@ -1,13 +1,13 @@
+import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import StretchRow from './Stretch'
-import { classNames } from '../../utils'
 
 function GuideRow({ title, titleClass, children }) {
   return (
     <StretchRow>
-      <div className={classNames('text-alma text-lg font-bold', titleClass)}>
+      <div className={clsx('text-alma text-lg font-bold', titleClass)}>
         {title}
       </div>
       <div className="mt-4">
