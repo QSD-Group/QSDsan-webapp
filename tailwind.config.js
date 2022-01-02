@@ -1049,5 +1049,9 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    // https://github.com/thoughtbot/tailwindcss-aria-attributes
+    // eslint-disable-next-line global-require
+    require('./tailwindcss-aria-attributes'),
+  ],
 }
