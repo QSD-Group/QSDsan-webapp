@@ -1,0 +1,16 @@
+{
+  "caloric_intake": 3782,
+  "animal_protein_intake": 73.48,
+  "vegetable_protein_intake": 40.27,
+  "food_waste_ratio": 22,
+  "price_level_ratio": 1,
+  "n_fertilizer_price": 1.326725373,
+  "p_fertilizer_price": 3.9980266876,
+  "k_fertilizer_price": 1.3451149143,
+  "liquid_petroleum_gas_price": 0.6959090909,
+  "electricity_price": 0.149,
+  "income_tax": 0.21,
+  "unskilled_labor_wage": 2001.55,
+  "skilled_labor_wage": 4541.72,
+  "electricity_impact_factor": 0.6783768853
+}
