@@ -78,6 +78,6 @@ get_ethanol = lambda: ethanol.F_mass*ethanol_density_kggal*tea.operating_hours/1
 get_MESP = lambda: tea.solve_price(ethanol)*ethanol_density_kggal # from $/kg to $/gallon
 get_GWP = lambda: sys.get_net_impact('GWP')/sys.operating_hours/ethanol.F_mass*ethanol_density_kggal
 
-print(f'annual ethanol: ${get_ethanol():.0f} MM gal/yr')
-print(f'price: ${get_MESP():.3f}/gal')
-print(f'GWP: {get_GWP():.3f} kg CO2e/gal')
+print(f'annual ethanol: ${get_ethanol():.3f} MM gal/yr')
+print(f'price: ${get_MESP():.2f}/gal')
+print(f'GWP: {get_GWP():.2f} kg CO2e/gal')
