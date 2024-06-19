@@ -62,7 +62,7 @@ if __name__ == '__main__':
     @param(name='plant_size',
             element=raw_wastewater,
             kind='coupled',
-            units='MGD',
+            units='kg/hr',
             baseline=15772549,
             distribution=dist)
     def set_plant_size(i):
@@ -73,9 +73,9 @@ if __name__ == '__main__':
         if p.name == 'Ww 2 dry sludge': break
     ww_2_dry_sludge = p.baseline # metric tonne/d/MGD (million gallon per day)
 
-    # Assume 1000 metric tonnes of dry sludge per day
-    MGD = 1000000/ww_2_dry_sludge
-    plant_size.baseline = MGD
+    # Assume 1 million metric tonnes of dry sludge per day
+    # MGD = 1000000/ww_2_dry_sludge
+    plant_size.baseline = 240*1e6*3.78541/24 # number from report, 240 MGD to kg/hr
     
     # Want MDSP (minimum diesel selling price) and GWP diesel (global warming potential of diesel)
     df = model.metrics_at_baseline()
@@ -85,3 +85,5 @@ if __name__ == '__main__':
     # MDSP, GWP = [m for m in model.metrics if m.name in ('MDSP', 'GWP diesel')]
     # print(f'{MDSP.name}: ${MDSP.get():.2f} [{MDSP.units}]')
     # print(f'{GWP.name}: {GWP.get():.2f} [{GWP.units}]')
+    
+    
