@@ -74,9 +74,10 @@ if __name__ == '__main__':
     ww_2_dry_sludge = p.baseline # metric tonne/d/MGD (million gallon per day)
 
     # Assume 1000 metric tonnes of dry sludge per day
-    MGD = 1000/ww_2_dry_sludge
+    MGD = 1000000/ww_2_dry_sludge
     plant_size.baseline = MGD
     
+    # Want MDSP (minimum diesel selling price) and GWP diesel (global warming potential of diesel)
     df = model.metrics_at_baseline()
 
     # Does not seem to work
