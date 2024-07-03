@@ -16,6 +16,7 @@ for license details.
 import biosteam as bst
 from exposan import htl
 from biorefineries.cane import create_sugarcane_chemicals
+from biorefineries.tea import create_cellulosic_ethanol_tea
 
 class BoilerTurbogenerator(bst.facilities.BoilerTurbogenerator):
 
@@ -70,9 +71,9 @@ def create_system():
     feedstock = bst.Stream('feedstock',
                             Water=700,
                             Ash=257,
-                            Lipids=204*(1000-700-257),
-                            Proteins=463*(1000-700-257),
-                            Carbohydrates=(1000-204-463)*(1000-700-257),)
+                            Lipids=204*(1000-700-257)/1e3,
+                            Proteins=463*(1000-700-257)/1e3,
+                            Carbohydrates=(1000-204-463)*(1000-700-257)/1e3,)
     BT = BoilerTurbogenerator('BT', ins=feedstock)
     sys = bst.System('sys', path=(BT,))
     return sys
@@ -89,8 +90,27 @@ compositions = {
     'manure': (0.6634, 0.3056, 0.092325, 0.216375),
     }
 
-
-
 sys = create_system()
-emissions = sys.flowsheet.stream.emissions
-emissions.imass['CO2'] # CO2 emission
+BT = sys.flowsheet.unit.BT
+tea = create_cellulosic_ethanol_tea(sys, OSBL_units=[BT])
+sys.simulate()
+
+
+# %%
+
+total_electricity = -BT.net_power # kW (kWh/hr), net production so the original value is negative
+annual_electricity = total_electricity * 365 * 24 / 1e3 # MWh
+
+# NJ averaged CO2 emission, https://www.epa.gov/egrid/data-explorer
+NJ_avg_power_CO2 = 486.63 * 0.453592 # lb CO2/MWh to kg CO2/MWh
+
+avoided_emissions = NJ_avg_power_CO2 * annual_electricity / 1e3 / 1e6 # million metric tonne
+# Net GHG emissions of NJ is 97.6 million metric tonnes of CO2e
+# https://dep.nj.gov/ghg/nj-ghg-inventory/
+avoided_emissions_percent = avoided_emissions / 97.6 
+
+
+# # This is biogenic CO2, does not count
+# emissions = sys.flowsheet.stream.emissions
+# total_CO2 = emissions.imass['CO2'] # CO2 emission # kg/hr
+# CO2_per_kWh = total_electricity / total_CO2
