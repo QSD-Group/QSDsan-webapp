@@ -1,22 +1,14 @@
-# QSDsan-Website
+# QSDsan-webapp — RETIRED
 
-## Status
-![](https://img.shields.io/badge/status-under%20development-blue?style=flat)
+> ⚠️ **This repository is retired and archived (read-only).**
 
+This repo held early versions of the NJ Bioenergy Calculator — a React prototype (never
+deployed) and an older static frontend + embedded Flask backend. All of it has been
+**superseded**. The live app is split across:
 
-## Installation
+- **Frontend:** [`nj-bioenergy-app`](https://github.com/QSD-Group/nj-bioenergy-app)
+  (formerly `QSDsan-frontend`)
+- **Backend:** [`nj-bioenergy-api`](https://github.com/QSD-Group/nj-bioenergy-api)
+  (formerly `QSDsan-api`)
 
-If you don't have `npm` (what are [npm](https://en.wikipedia.org/wiki/Npm_(software)), [Node.js](https://en.wikipedia.org/wiki/Node.js), [nvm](https://github.com/nvm-sh/nvm#intro)?), follow the [official instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-
-
-Once you have `npm`, install all required packages (the `--force` flag to override `lottie` and use React 17).
-
-```bash
-npm install --force
-```
-
-Then, start the website using
-
-```bash
-npm start
-```
+This repo is kept only for history.
